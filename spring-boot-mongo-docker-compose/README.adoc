@@ -1,0 +1,55 @@
+
+:spring_version: current
+:toc:
+:project_id: spring-boot-mongo-docker
+:icons: font
+:source-highlighter: prettify
+
+This guide walks you through the process of building a https://docker.com[Docker] image for running a Spring Boot application with mongo database.
+
+== What you'll build
+
+https://docker.com[Docker] is a Linux container management toolkit with a "social" aspect, allowing users to publish container images and consume those published by others. A Docker image is a recipe for running a containerized process, and in this guide we will build one for a simple Spring boot application.
+
+== What you'll need
+:java_version: 1.8
+include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/prereq_editor_jdk_buildtools.adoc[]
+
+
+
+[[initial]]
+== Set up a Spring Boot app
+
+
+
+If you want to run with Maven, execute:
+
+[subs="attributes"]
+----
+./mvn package && java -jar target/spring-boot-mongo-docker-1.0.0.jar
+----
+
+and go to http://localhost:8080/customer/ to see your persisted customers.
+
+== Containerize It
+
+If you want to run with Docker, execute:
+
+[subs="attributes"]
+----
+./docker-compose up
+----
+
+
+== Summary
+
+Congratulations! You've just created a Docker container for a Spring Boot app! Spring Boot apps run on port 8080 inside the container by default and we mapped that to the same port on the host using "-p" on the command line.
+
+== See Also
+
+The following guides may also be helpful:
+
+* https://spring.io/guides/gs/serving-web-content/[Serving Web Content with Spring MVC]
+* https://spring.io/guides/gs/spring-boot/[Building an Application with Spring Boot]
+
+include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/footer.adoc[]
